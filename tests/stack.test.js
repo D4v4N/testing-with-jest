@@ -22,7 +22,7 @@ test('custom test: pop returns the newest pushed value', () => {
     stack.push("first");
     stack.push("second");
 
-    expect(stack.pop()).toBe("first");
+    expect(stack.pop()).toBe("second");
 });
 
 
