@@ -45,5 +45,5 @@ test('custom test: clicking peek shows the pushed value', async () => {
     await peek.click();
 
     let stack = await driver.findElement(By.id('top_of_stack')).getText();
-    expect(stack).toEqual("Wrong value");
+    expect(stack).toEqual("Apelsin");
 });
