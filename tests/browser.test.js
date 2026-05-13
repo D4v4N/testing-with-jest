@@ -32,3 +32,18 @@ test('Pushing a value updates the visible stack text', async () => {
     let stack = await driver.findElement(By.id('top_of_stack')).getText();
     expect(stack).toEqual("Bananer");
 });
+
+test('custom test: clicking peek shows the pushed value', async () => {
+    let push = await driver.findElement(By.id('push'));
+    await push.click();
+
+    let alert = await driver.switchTo().alert();
+    await alert.sendKeys("Apelsin");
+    await alert.accept();
+
+    let peek = await driver.findElement(By.id('peek'));
+    await peek.click();
+
+    let stack = await driver.findElement(By.id('top_of_stack')).getText();
+    expect(stack).toEqual("Wrong value");
+});
